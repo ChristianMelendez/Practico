@@ -130,10 +130,13 @@ public class Ingreso extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (TxtNombre.getText().equals("")||TxtApellido.getText().equals("")||TxtDNI.getText().equals("")||TxtTel.getText().equals("")||TxtPassword.getText().equals("")||TxtPasswordconfirm.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Faltó uno o mas datos para ingresar");
-            if(TxtPassword.getText().equals(TxtPasswordconfirm.getText())){
-                JOptionPane.showMessageDialog(null, "Error de Contraseña(No coinciden)");
+        }
+            else{
+                if (TxtPassword.getText().equals(TxtPasswordconfirm.getText())){
+                    JOptionPane.showMessageDialog(null,"Contraseña confirmada");
             
-        }else{
+                }
+                else{
           /*  
             nombre[i]=TxtNombre.getText();//Guarda en nombre[i] el nombre que se ingresa en el primer campo de texto
             apellido[i]=TxtApellido.getText();// Same.
@@ -141,6 +144,7 @@ public class Ingreso extends javax.swing.JFrame {
             dni[i]=Integer.parseInt(this.TxtDNI.getText());//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
             telefono[i]=Integer.parseInt(this.TxtTel.getText());// same
             */
+                    JOptionPane.showMessageDialog(null, "Error de Contraseña(No coinciden)");
         }
         }
     }//GEN-LAST:event_BtnAceptarActionPerformed

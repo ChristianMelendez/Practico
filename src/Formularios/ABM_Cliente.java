@@ -2,13 +2,16 @@ package Formularios;
 
 import javax.swing.JOptionPane;
 public class ABM_Cliente extends javax.swing.JFrame {
+    
         static String [] nombre=new String[20];// Crea un vector Nombre
         String[] apellido=new String[20];// Crea un vector apellido. etc etc
         static String[] password=new String[20];
-        int[] dni=new int[20];
-        int[] telefono=new int[20];
+        String[] dni=new String[20];
+        String[] telefono=new String[20];
+        
         static int i=0;// Crea un contador para el desplazamiento de los vectores
-        static int k=0;
+        static int k=0;//Contador de la maxima cantidad de usuarios
+        
     public ABM_Cliente() {
         initComponents();
         Labelcontador.setText(String.valueOf(i));
@@ -196,8 +199,8 @@ public class ABM_Cliente extends javax.swing.JFrame {
             nombre[i]=TxtNombre.getText();//Guarda en nombre[i] el nombre que se ingresa en el primer campo de texto
             apellido[i]=TxtApellido.getText();// Same.
             password[i]=TxtPassword.getText();
-            dni[i]=Integer.parseInt(this.TxtDNI.getText());//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
-            telefono[i]=Integer.parseInt(this.TxtTel.getText());// same
+            dni[i]=TxtDNI.getText();//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
+            telefono[i]=TxtTel.getText();// same
             i++;
             k++;
             Labelcontador.setText(String.valueOf(i));//Muestra en el contador el valor del indice (Verificar si es necesario o no)
@@ -210,8 +213,8 @@ public class ABM_Cliente extends javax.swing.JFrame {
         TxtAreaDatos.setText("");
         nombre[i]="";//Vacia nombre[i] 
        apellido[i]="";// Same.
-       dni[i]=0;//Pone en 0 el dni[i]
-       telefono[i]=0;// Same
+       dni[i]="";//Same
+       telefono[i]="";// Same
     }//GEN-LAST:event_BtnBorrarActionPerformed
 
     private void BtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResetActionPerformed

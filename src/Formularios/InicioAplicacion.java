@@ -36,6 +36,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
         BtnSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,6 +99,9 @@ public class InicioAplicacion extends javax.swing.JFrame {
 
         jLabel4.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 260, 200));
+
+        jButton4.setText("Divisas");
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 410));
 
@@ -175,6 +179,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
