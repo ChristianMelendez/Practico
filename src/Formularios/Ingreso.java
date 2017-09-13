@@ -1,20 +1,35 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Formularios;
 
-
-
-import javax.swing.JOptionPane;
+/**
+ *
+ * @author Christian
+ */
 public class Ingreso extends javax.swing.JFrame {
-        static String [] nombre=new String[20];// Crea un vector Nombre
-        String[] apellido=new String[20];// Crea un vector apellido. etc etc
-        static String[] password=new String[20];
-        
+    final String bienvenida="Bienvenido/a, ";
     
     public Ingreso() {
         initComponents();
+        LabelRetiro.setVisible(false);
+        LabelIngreso.setVisible(false);
+        LabelCuenta.setVisible(false);
+        TxtIngreso.setVisible(false);
+        TxtRetiro.setVisible(false);
+        TxtCuenta.setVisible(false);
         
-        //Labelcontador.setVisible(false);
+        this.setLocationRelativeTo(null);
+         LabelBienvenida.setText(bienvenida+ABM_Cliente.nombre[ABM_Cliente.i]);
+        LabelNombreCliente.setText(ABM_Cliente.nombre[ABM_Cliente.i]);
+        LabelApellidoCliente.setText(ABM_Cliente.apellido[ABM_Cliente.i]);
+        LabelDNICliente.setText(ABM_Cliente.dni[ABM_Cliente.i]);
+        LabelTelCliente.setText(ABM_Cliente.telefono[ABM_Cliente.i]);
+        
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -25,135 +40,175 @@ public class Ingreso extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TxtApellido = new javax.swing.JTextField();
-        TxtTel = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        LabelTel = new javax.swing.JLabel();
-        BtnAceptar = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        TxtNombre = new javax.swing.JTextField();
-        LabelDNI = new javax.swing.JLabel();
-        TxtDNI = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        LabelBienvenida = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         LabelNombre = new javax.swing.JLabel();
         LabelApellido = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        LabelConfirmacion = new javax.swing.JLabel();
-        TxtPassword = new javax.swing.JTextField();
-        LabelContraseña = new javax.swing.JLabel();
-        TxtPasswordconfirm = new javax.swing.JTextField();
+        LabelDNI = new javax.swing.JLabel();
+        LabelRetiro = new javax.swing.JLabel();
+        LabelNombreCliente = new javax.swing.JLabel();
+        LabelApellidoCliente = new javax.swing.JLabel();
+        LabelDNICliente = new javax.swing.JLabel();
+        LabelTelCliente = new javax.swing.JLabel();
+        BtnSalir = new javax.swing.JButton();
+        BtnMenuprincipal = new javax.swing.JButton();
+        TxtRetiro = new javax.swing.JTextField();
+        TxtIngreso = new javax.swing.JTextField();
+        LabelTel1 = new javax.swing.JLabel();
+        LabelIngreso = new javax.swing.JLabel();
+        LabelCuenta = new javax.swing.JLabel();
+        TxtCuenta = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(720, 412));
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
-        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(209, 173, 69)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(204, 153, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TxtApellido.setToolTipText("");
-        jPanel1.add(TxtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 114, 235, 33));
-        jPanel1.add(TxtTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 217, 235, 33));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Ingreso de datos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 21, 235, -1));
-
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("(Max 14)");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 234, -1, -1));
-
-        LabelTel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelTel.setForeground(new java.awt.Color(255, 255, 255));
-        LabelTel.setText("Tel : ");
-        jPanel1.add(LabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
-
-        BtnAceptar.setBackground(new java.awt.Color(102, 255, 102));
-        BtnAceptar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        BtnAceptar.setText("Aceptar");
-        BtnAceptar.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Ver ultimos movimientos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnAceptarActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 302, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 260, 30));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("(Max 9)");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 177, -1, -1));
+        LabelBienvenida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelBienvenida.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 290, 40));
 
-        TxtNombre.setToolTipText("");
-        jPanel1.add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 68, 235, 33));
-
-        LabelDNI.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelDNI.setForeground(new java.awt.Color(255, 255, 255));
-        LabelDNI.setText("DNI : ");
-        jPanel1.add(LabelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 171, -1, -1));
-        jPanel1.add(TxtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 160, 235, 33));
+        jButton3.setText("Extraccion");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 260, 80));
 
         LabelNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelNombre.setForeground(new java.awt.Color(255, 255, 255));
         LabelNombre.setText("Nombre : ");
-        jPanel1.add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel1.add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         LabelApellido.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelApellido.setForeground(new java.awt.Color(255, 255, 255));
         LabelApellido.setText("Apellido : ");
-        jPanel1.add(LabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 125, -1, -1));
+        jPanel1.add(LabelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
-        jButton1.setText("Menu principal");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        LabelDNI.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelDNI.setForeground(new java.awt.Color(255, 255, 255));
+        LabelDNI.setText("DNI : ");
+        jPanel1.add(LabelDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+
+        LabelRetiro.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelRetiro.setForeground(new java.awt.Color(255, 255, 255));
+        LabelRetiro.setText("Último retiro: ");
+        jPanel1.add(LabelRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
+
+        LabelNombreCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelNombreCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 230, 20));
+
+        LabelApellidoCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelApellidoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelApellidoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 230, 20));
+
+        LabelDNICliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelDNICliente.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelDNICliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 230, 20));
+
+        LabelTelCliente.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelTelCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelTelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 230, 20));
+
+        BtnSalir.setText("Salir");
+        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, -1, -1));
 
-        LabelConfirmacion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        LabelConfirmacion.setForeground(new java.awt.Color(255, 255, 255));
-        LabelConfirmacion.setText("Confirmar contraseña: ");
-        jPanel1.add(LabelConfirmacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 130, 20));
-        jPanel1.add(TxtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 160, -1));
+        BtnMenuprincipal.setText("Menu principal");
+        BtnMenuprincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMenuprincipalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnMenuprincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, -1, -1));
 
-        LabelContraseña.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        LabelContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        LabelContraseña.setText("Contraseña :");
-        jPanel1.add(LabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
-        jPanel1.add(TxtPasswordconfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 160, -1));
+        TxtRetiro.setEnabled(false);
+        jPanel1.add(TxtRetiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 160, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 410));
+        TxtIngreso.setEnabled(false);
+        jPanel1.add(TxtIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 250, 160, -1));
+
+        LabelTel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelTel1.setForeground(new java.awt.Color(255, 255, 255));
+        LabelTel1.setText("Tel : ");
+        jPanel1.add(LabelTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+
+        LabelIngreso.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelIngreso.setForeground(new java.awt.Color(255, 255, 255));
+        LabelIngreso.setText("Último ingreso: ");
+        jPanel1.add(LabelIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 250, -1, -1));
+
+        LabelCuenta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        LabelCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        LabelCuenta.setText("Estado de la Cuenta: ");
+        jPanel1.add(LabelCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
+
+        TxtCuenta.setEnabled(false);
+        jPanel1.add(TxtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 160, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAceptarActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        if (TxtNombre.getText().equals("")||TxtApellido.getText().equals("")||TxtDNI.getText().equals("")||TxtTel.getText().equals("")||TxtPassword.getText().equals("")||TxtPasswordconfirm.getText().equals("")){
-            JOptionPane.showMessageDialog(null,"Faltó uno o mas datos para ingresar");
-        }
-            else{
-                if (TxtPassword.getText().equals(TxtPasswordconfirm.getText())){
-                    JOptionPane.showMessageDialog(null,"Contraseña confirmada");
-            
-                }
-                else{
-          /*  
-            nombre[i]=TxtNombre.getText();//Guarda en nombre[i] el nombre que se ingresa en el primer campo de texto
-            apellido[i]=TxtApellido.getText();// Same.
-            password[i]=TxtPassword.getText();
-            dni[i]=Integer.parseInt(this.TxtDNI.getText());//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
-            telefono[i]=Integer.parseInt(this.TxtTel.getText());// same
-            */
-                    JOptionPane.showMessageDialog(null, "Error de Contraseña(No coinciden)");
-        }
-        }
-    }//GEN-LAST:event_BtnAceptarActionPerformed
+        this.setVisible(false);
+        new Extraccion().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        System.exit(0);
+    }//GEN-LAST:event_BtnSalirActionPerformed
+
+    private void BtnMenuprincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuprincipalActionPerformed
+        // TODO add your handling code here:
+        ABM_Cliente.i=0;
+        this.setVisible(false);
         new InicioAplicacion().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnMenuprincipalActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        LabelRetiro.setVisible(true);
+        LabelIngreso.setVisible(true);
+        LabelCuenta.setVisible(true);
+        TxtIngreso.setVisible(true);
+        TxtRetiro.setVisible(true);
+        TxtCuenta.setVisible(true);
+        
+        TxtIngreso.setText(String.valueOf(ABM_Cliente.movimientoingreso[ABM_Cliente.i]));
+        TxtRetiro.setText(String.valueOf(ABM_Cliente.movimientodebito[ABM_Cliente.i]));  
+        TxtCuenta.setText(String.valueOf(ABM_Cliente.cuenta[ABM_Cliente.i]));
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,7 +236,6 @@ public class Ingreso extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Ingreso.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -190,25 +244,27 @@ public class Ingreso extends javax.swing.JFrame {
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAceptar;
+    private javax.swing.JButton BtnMenuprincipal;
+    private javax.swing.JButton BtnSalir;
     private javax.swing.JLabel LabelApellido;
-    private javax.swing.JLabel LabelConfirmacion;
-    private javax.swing.JLabel LabelContraseña;
+    private javax.swing.JLabel LabelApellidoCliente;
+    private javax.swing.JLabel LabelBienvenida;
+    private javax.swing.JLabel LabelCuenta;
     private javax.swing.JLabel LabelDNI;
+    private javax.swing.JLabel LabelDNICliente;
+    private javax.swing.JLabel LabelIngreso;
     private javax.swing.JLabel LabelNombre;
-    private javax.swing.JLabel LabelTel;
-    private javax.swing.JTextField TxtApellido;
-    private javax.swing.JTextField TxtDNI;
-    private javax.swing.JTextField TxtNombre;
-    private javax.swing.JTextField TxtPassword;
-    private javax.swing.JTextField TxtPasswordconfirm;
-    private javax.swing.JTextField TxtTel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel LabelNombreCliente;
+    private javax.swing.JLabel LabelRetiro;
+    private javax.swing.JLabel LabelTel1;
+    private javax.swing.JLabel LabelTelCliente;
+    private javax.swing.JTextField TxtCuenta;
+    private javax.swing.JTextField TxtIngreso;
+    private javax.swing.JTextField TxtRetiro;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

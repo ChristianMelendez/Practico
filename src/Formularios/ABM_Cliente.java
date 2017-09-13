@@ -4,10 +4,13 @@ import javax.swing.JOptionPane;
 public class ABM_Cliente extends javax.swing.JFrame {
     
         static String [] nombre=new String[20];// Crea un vector Nombre
-        String[] apellido=new String[20];// Crea un vector apellido. etc etc
+        static String[] apellido=new String[20];// Crea un vector apellido. etc etc
         static String[] password=new String[20];
-        String[] dni=new String[20];
-        String[] telefono=new String[20];
+        static String[] dni=new String[20];
+        static String[] telefono=new String[20];
+        static long [] cuenta=new long [20];
+        static long [] movimientoingreso=new long [20];
+        static long [] movimientodebito=new long [20];
         
         static int i=0;// Crea un contador para el desplazamiento de los vectores
         static int k=0;//Contador de la maxima cantidad de usuarios
@@ -109,13 +112,13 @@ public class ABM_Cliente extends javax.swing.JFrame {
 
         BtnAceptar.setBackground(new java.awt.Color(102, 255, 102));
         BtnAceptar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        BtnAceptar.setText("Aceptar");
+        BtnAceptar.setText("Modificar/Crear");
         BtnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 302, -1, -1));
+        jPanel1.add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("(Max 9)");
@@ -201,8 +204,8 @@ public class ABM_Cliente extends javax.swing.JFrame {
             password[i]=TxtPassword.getText();
             dni[i]=TxtDNI.getText();//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
             telefono[i]=TxtTel.getText();// same
-            i++;
             k++;
+            i++;
             Labelcontador.setText(String.valueOf(i));//Muestra en el contador el valor del indice (Verificar si es necesario o no)
         }
         

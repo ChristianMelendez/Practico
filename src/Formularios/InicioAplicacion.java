@@ -10,12 +10,18 @@ import javax.swing.JOptionPane;
 public class InicioAplicacion extends javax.swing.JFrame {
     String adminpassword="39913811";
     String intento;
+    String intentocliente;
+    int c;
+    
+    int numusuario;
+    int auxnumusuario;
     /**
      * Creates new form Inicio
      */
     public InicioAplicacion() {
         initComponents();
         this.setLocationRelativeTo(null);
+        jLabel5.setText(String.valueOf(ABM_Cliente.i));
     }
 
     /**
@@ -37,6 +43,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -47,6 +54,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(209, 173, 69)));
+        jPanel2.setPreferredSize(new java.awt.Dimension(720, 412));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("ABM (Only Admin)");
@@ -57,7 +65,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 190, 60));
 
-        jButton2.setText("Ingreso");
+        jButton2.setText("Registro");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -65,7 +73,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 190, 60));
 
-        jButton3.setText("Extraccion");
+        jButton3.setText("Ingreso");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -103,7 +111,10 @@ public class InicioAplicacion extends javax.swing.JFrame {
         jButton4.setText("Divisas");
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 410));
+        jLabel5.setText("jLabel5");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,13 +140,32 @@ public class InicioAplicacion extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        new Ingreso().setVisible(true);
+        new Registro().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        new Extraccion().setVisible(true);
+        numusuario=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de usuario (min: 0 y max: "+ABM_Cliente.k));
+        auxnumusuario=numusuario;
+        while(auxnumusuario!=ABM_Cliente.i){
+            ABM_Cliente.i++;
+        }
+        if (numusuario!=ABM_Cliente.i){
+            JOptionPane.showMessageDialog(null, "Usuario no valido");
+        }
+        else{
+            intentocliente=(JOptionPane.showInputDialog("Ingrese la contraseña del usuario"));
+            if(intentocliente!=null){
+                if(intentocliente.equals(ABM_Cliente.password[ABM_Cliente.i])){
+                    this.setVisible(false);
+                    new Ingreso().setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Contraseña incorrecta");
+                }
+            }  
+        }
+ 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -184,6 +214,7 @@ public class InicioAplicacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
