@@ -99,8 +99,10 @@ public class Inicio extends javax.swing.JFrame {
         switch(opcion){
             case 1:this.dispose();
             new InicioAplicacion().setVisible(true);
+            break;
             case 2:this.dispose();
             new Tatetiexo().setVisible(true);
+            break;
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed

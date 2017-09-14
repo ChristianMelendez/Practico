@@ -221,8 +221,9 @@ public class Registro extends javax.swing.JFrame {
             ABM_Cliente.pesosuyu[ABM_Cliente.k]=Double.parseDouble(TxtPesos.getText());
             ABM_Cliente.libras[ABM_Cliente.k]=Double.parseDouble(TxtLibras.getText());
             
-            ABM_Cliente.k++;
+            
             JOptionPane.showMessageDialog(null,"Cuenta creada satifacctoriamente. Su numero de usuario es "+ABM_Cliente.k);
+            ABM_Cliente.k++;
             this.dispose();
             new InicioAplicacion().setVisible(true);
         }
