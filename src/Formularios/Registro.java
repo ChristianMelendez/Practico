@@ -41,6 +41,17 @@ public class Registro extends javax.swing.JFrame {
         TxtPasswordconfirm = new javax.swing.JTextField();
         LabelFondos = new javax.swing.JLabel();
         TxtFondos = new javax.swing.JTextField();
+        LabelLibra = new javax.swing.JLabel();
+        LabelYenes = new javax.swing.JLabel();
+        LabelDolares = new javax.swing.JLabel();
+        LabelPesosuruguayos = new javax.swing.JLabel();
+        BtnSalir = new javax.swing.JButton();
+        LabelEuros1 = new javax.swing.JLabel();
+        TxtYenes = new javax.swing.JTextField();
+        TxtPesos = new javax.swing.JTextField();
+        TxtLibras = new javax.swing.JTextField();
+        TxtEuros = new javax.swing.JTextField();
+        TxtDolares = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -76,7 +87,7 @@ public class Registro extends javax.swing.JFrame {
                 BtnAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 302, -1, -1));
+        jPanel1.add(BtnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("(Max 9)");
@@ -107,7 +118,7 @@ public class Registro extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
 
         LabelConfirmacion.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         LabelConfirmacion.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +138,60 @@ public class Registro extends javax.swing.JFrame {
         jPanel1.add(LabelFondos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
         jPanel1.add(TxtFondos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 235, 33));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 410));
+        LabelLibra.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        LabelLibra.setForeground(new java.awt.Color(255, 255, 255));
+        LabelLibra.setText("Libra esterlina: ");
+        jPanel1.add(LabelLibra, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, 120, 20));
+
+        LabelYenes.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        LabelYenes.setForeground(new java.awt.Color(255, 255, 255));
+        LabelYenes.setText("Yenes : ");
+        jPanel1.add(LabelYenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, 70, 20));
+
+        LabelDolares.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        LabelDolares.setForeground(new java.awt.Color(255, 255, 255));
+        LabelDolares.setText("Dolares : ");
+        jPanel1.add(LabelDolares, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, -1, 20));
+
+        LabelPesosuruguayos.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        LabelPesosuruguayos.setForeground(new java.awt.Color(255, 255, 255));
+        LabelPesosuruguayos.setText("Peso UYU : ");
+        jPanel1.add(LabelPesosuruguayos, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 170, 90, 20));
+
+        BtnSalir.setText("Salir");
+        BtnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BtnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 350, -1, -1));
+
+        LabelEuros1.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        LabelEuros1.setForeground(new java.awt.Color(255, 255, 255));
+        LabelEuros1.setText("Euros : ");
+        jPanel1.add(LabelEuros1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 60, 20));
+
+        TxtYenes.setText(" ");
+        TxtYenes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtYenesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(TxtYenes, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 80, -1));
+
+        TxtPesos.setText(" ");
+        jPanel1.add(TxtPesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 170, 80, -1));
+
+        TxtLibras.setText(" ");
+        jPanel1.add(TxtLibras, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 80, -1));
+
+        TxtEuros.setText(" ");
+        jPanel1.add(TxtEuros, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 80, -1));
+
+        TxtDolares.setText(" ");
+        jPanel1.add(TxtDolares, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 80, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -151,8 +215,14 @@ public class Registro extends javax.swing.JFrame {
             ABM_Cliente.dni[ABM_Cliente.k]=TxtDNI.getText();//Guarda en dni[i] el entero que se ingresa en el tercer campo de texto
             ABM_Cliente.telefono[ABM_Cliente.k]=TxtTel.getText();// same
             ABM_Cliente.cuenta[ABM_Cliente.k]=Long.parseLong(TxtFondos.getText());
+            ABM_Cliente.euros[ABM_Cliente.k]=Double.parseDouble(TxtEuros.getText());
+            ABM_Cliente.dolares[ABM_Cliente.k]=Double.parseDouble(TxtDolares.getText());
+            ABM_Cliente.yenes[ABM_Cliente.k]=Double.parseDouble(TxtYenes.getText());
+            ABM_Cliente.pesosuyu[ABM_Cliente.k]=Double.parseDouble(TxtPesos.getText());
+            ABM_Cliente.libras[ABM_Cliente.k]=Double.parseDouble(TxtLibras.getText());
+            
             ABM_Cliente.k++;
-            JOptionPane.showMessageDialog(null,"Cuenta creada");
+            JOptionPane.showMessageDialog(null,"Cuenta creada satifacctoriamente. Su numero de usuario es "+ABM_Cliente.k);
             this.dispose();
             new InicioAplicacion().setVisible(true);
         }
@@ -164,6 +234,15 @@ public class Registro extends javax.swing.JFrame {
         this.dispose();
         new InicioAplicacion().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void BtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSalirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_BtnSalirActionPerformed
+
+    private void TxtYenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtYenesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtYenesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,20 +284,31 @@ public class Registro extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAceptar;
+    private javax.swing.JButton BtnSalir;
     private javax.swing.JLabel LabelApellido;
     private javax.swing.JLabel LabelConfirmacion;
     private javax.swing.JLabel LabelContraseña;
     private javax.swing.JLabel LabelDNI;
+    private javax.swing.JLabel LabelDolares;
+    private javax.swing.JLabel LabelEuros1;
     private javax.swing.JLabel LabelFondos;
+    private javax.swing.JLabel LabelLibra;
     private javax.swing.JLabel LabelNombre;
+    private javax.swing.JLabel LabelPesosuruguayos;
     private javax.swing.JLabel LabelTel;
+    private javax.swing.JLabel LabelYenes;
     private javax.swing.JTextField TxtApellido;
     private javax.swing.JTextField TxtDNI;
+    private javax.swing.JTextField TxtDolares;
+    private javax.swing.JTextField TxtEuros;
     private javax.swing.JTextField TxtFondos;
+    private javax.swing.JTextField TxtLibras;
     private javax.swing.JTextField TxtNombre;
     private javax.swing.JTextField TxtPassword;
     private javax.swing.JTextField TxtPasswordconfirm;
+    private javax.swing.JTextField TxtPesos;
     private javax.swing.JTextField TxtTel;
+    private javax.swing.JTextField TxtYenes;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -10,8 +10,16 @@ package Formularios;
  * @author Christian
  */
 public class Ingreso extends javax.swing.JFrame {
-    final String bienvenida="Bienvenido/a, ";
     
+    final String bienvenida="Bienvenido/a, ";
+    public void mostrarcampos(){
+        LabelRetiro.setVisible(true);
+        LabelIngreso.setVisible(true);
+        LabelCuenta.setVisible(true);
+        TxtIngreso.setVisible(true);
+        TxtRetiro.setVisible(true);
+        TxtCuenta.setVisible(true);
+    }
     public Ingreso() {
         initComponents();
         LabelRetiro.setVisible(false);
@@ -22,7 +30,7 @@ public class Ingreso extends javax.swing.JFrame {
         TxtCuenta.setVisible(false);
         
         this.setLocationRelativeTo(null);
-         LabelBienvenida.setText(bienvenida+ABM_Cliente.nombre[ABM_Cliente.i]);
+        LabelBienvenida.setText(bienvenida+ABM_Cliente.nombre[ABM_Cliente.i]);
         LabelNombreCliente.setText(ABM_Cliente.nombre[ABM_Cliente.i]);
         LabelApellidoCliente.setText(ABM_Cliente.apellido[ABM_Cliente.i]);
         LabelDNICliente.setText(ABM_Cliente.dni[ABM_Cliente.i]);
@@ -59,6 +67,7 @@ public class Ingreso extends javax.swing.JFrame {
         LabelIngreso = new javax.swing.JLabel();
         LabelCuenta = new javax.swing.JLabel();
         TxtCuenta = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -76,9 +85,9 @@ public class Ingreso extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 260, 30));
 
-        LabelBienvenida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelBienvenida.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         LabelBienvenida.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(LabelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 290, 40));
+        jPanel1.add(LabelBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 400, 40));
 
         jButton3.setText("Extraccion");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +173,14 @@ public class Ingreso extends javax.swing.JFrame {
         TxtCuenta.setEnabled(false);
         jPanel1.add(TxtCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 160, -1));
 
+        jButton4.setText("Divisas");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 170, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -198,17 +215,17 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        LabelRetiro.setVisible(true);
-        LabelIngreso.setVisible(true);
-        LabelCuenta.setVisible(true);
-        TxtIngreso.setVisible(true);
-        TxtRetiro.setVisible(true);
-        TxtCuenta.setVisible(true);
-        
+        mostrarcampos();
         TxtIngreso.setText(String.valueOf(ABM_Cliente.movimientoingreso[ABM_Cliente.i]));
         TxtRetiro.setText(String.valueOf(ABM_Cliente.movimientodebito[ABM_Cliente.i]));  
         TxtCuenta.setText(String.valueOf(ABM_Cliente.cuenta[ABM_Cliente.i]));
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Divisas().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,6 +282,7 @@ public class Ingreso extends javax.swing.JFrame {
     private javax.swing.JTextField TxtRetiro;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

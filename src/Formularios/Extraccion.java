@@ -14,7 +14,10 @@ public class Extraccion extends javax.swing.JFrame {
     final String bienvenida="Bienvenido/a, ";
     String [] nombre=new String [10];
     int j=0;
-    
+    public void movimientofinal(){
+        ABM_Cliente.movimientoingreso[ABM_Cliente.i]=auxmonto;
+        ABM_Cliente.movimientodebito[ABM_Cliente.i]=auxdebito;
+    }
     
     public Extraccion() {
         initComponents();
@@ -52,8 +55,6 @@ public class Extraccion extends javax.swing.JFrame {
         BtnVerEstado = new javax.swing.JButton();
         BtnMenuprincipal = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cajero automatico");
@@ -156,12 +157,6 @@ public class Extraccion extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 120, -1));
 
-        jLabel4.setText("monto");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
-
-        jLabel5.setText("retiro");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,7 +190,7 @@ public class Extraccion extends javax.swing.JFrame {
             TxtMonto.setText("");
             monto=0;
             contadormonto++;
-           jLabel4.setText(String.valueOf(ABM_Cliente.movimientoingreso[ABM_Cliente.i]=auxmonto));
+           
            
             
             if (contadormonto==10){
@@ -219,7 +214,7 @@ public class Extraccion extends javax.swing.JFrame {
             else{
                 debito=Long.parseLong(this.TxtDebito.getText());
                 auxdebito=debito;
-                jLabel5.setText(String.valueOf(ABM_Cliente.movimientodebito[ABM_Cliente.i]=auxdebito));
+                
                 auxcuenta-=debito;
                 if (auxcuenta<0){
                     JOptionPane.showMessageDialog(null,"No puede debitar esa cantidad");
@@ -253,18 +248,14 @@ public class Extraccion extends javax.swing.JFrame {
 
     private void BtnMenuprincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMenuprincipalActionPerformed
         // TODO add your handling code here:
-        ABM_Cliente.movimientoingreso[ABM_Cliente.i]=auxmonto;
-        ABM_Cliente.movimientodebito[ABM_Cliente.i]=auxdebito;
-             
+        movimientofinal();
         this.setVisible(false);
         new InicioAplicacion().setVisible(true);
     }//GEN-LAST:event_BtnMenuprincipalActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ABM_Cliente.movimientoingreso[ABM_Cliente.i]=auxmonto;
-        ABM_Cliente.movimientodebito[ABM_Cliente.i]=auxdebito;
-             
+        movimientofinal();
         this.setVisible(false);
         new Ingreso().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -322,8 +313,6 @@ public class Extraccion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

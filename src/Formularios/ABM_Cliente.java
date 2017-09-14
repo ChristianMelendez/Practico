@@ -11,6 +11,11 @@ public class ABM_Cliente extends javax.swing.JFrame {
         static long [] cuenta=new long [20];
         static long [] movimientoingreso=new long [20];
         static long [] movimientodebito=new long [20];
+        static double [] euros=new double[20];
+        static double [] dolares=new double[20];
+        static double [] yenes=new double[20];
+        static double [] pesosuyu=new double[20];
+        static double [] libras=new double[20];
         
         static int i=0;// Crea un contador para el desplazamiento de los vectores
         static int k=0;//Contador de la maxima cantidad de usuarios
@@ -197,7 +202,7 @@ public class ABM_Cliente extends javax.swing.JFrame {
             
         }else{
             
-            TxtAreaDatos.setText("Se ingreso : \nNombre:"+TxtNombre.getText()+"\nApellido : "+TxtApellido.getText()+"\nPassword: "+TxtPassword.getText()+"\nDNI : "+TxtDNI.getText()+"\nTelefono : "+TxtTel.getText());
+            TxtAreaDatos.setText("Se ingreso en la posicion "+i+" : \nNombre:"+TxtNombre.getText()+"\nApellido : "+TxtApellido.getText()+"\nPassword: "+TxtPassword.getText()+"\nDNI : "+TxtDNI.getText()+"\nTelefono : "+TxtTel.getText());
         
             nombre[i]=TxtNombre.getText();//Guarda en nombre[i] el nombre que se ingresa en el primer campo de texto
             apellido[i]=TxtApellido.getText();// Same.
